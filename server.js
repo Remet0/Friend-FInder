@@ -1,5 +1,6 @@
 //set up dependancies
 const express = require('express');
+const path = require('path');
 
 
 
@@ -15,6 +16,8 @@ app.use(express.json());
 
 require('./app/routing/apiRoutes.js')(app);
 require('./app/routing/htmlRoutes.js')(app);
+
+app.use(express.static(path.join(__dirname, '/static')));
 
 
 app.listen(PORT, () => {

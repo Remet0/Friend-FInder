@@ -7,9 +7,9 @@ module.exports = function apiRoutes(app){
     });
 
     app.post('/api/friends', (req, res) => {
-        peopleData.push(req.body);
+        
         let user = req.body
-        let userScore = JSON.parse(user.scores)
+        let userScore = user.scores
         let bestDif = 50;
         let bestIndex = 0;
         for (let i = 0; i < peopleData.length; i++) {
@@ -22,8 +22,8 @@ module.exports = function apiRoutes(app){
                 bestDif = temp;
                 bestIndex = i;
             }
-            console.log(bestDif)
         }
+        peopleData.push(req.body);
         res.json(peopleData[bestIndex])
     })
 };

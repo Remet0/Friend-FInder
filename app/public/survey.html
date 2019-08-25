@@ -5,136 +5,242 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <style>
+    #survey_modal {
+    position: fixed;
+    z-index: 1;
+    left: 0;top:0;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0,0,0,0.5);
+}
+.modal-content {
+    background-color:lightslategray;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 40%;
+}
+.hide {
+    display: none;
+}
+
+.questions{
+align-content: center;
+}
+.question-title{
+    font-size: 26px;
+    margin-top: 10px;
+}
+select{
+    width: 100px;
+    align-items: center;
+}
+button{
+    margin-top: 15px;
+    height: 50px;
+    width: 100px;
+    background-color: grey;
+    color: white;
+    border-radius: 5px;
+}
+body{
+    background-color: darkgray;
+}
+#name{
+    margin-left: 35px;
+    border: solid black 1px;
+}
+#photo{
+    border: solid black 1px;
+}
+    </style>
 </head>
 <body>
+        <section id="survey_modal" class="hide modal">
+                <div class="modal-content">
+                    <h1 id="modal-title"></h1>
+                    <img src="" alt="Your friend" id="modal-img">
+                </div>
+        </section>
     
-    <form action="/api/friends">
+    <form id = 'form'>
+        <div class = questions>
         <div>
+            <h1>Enter you name and a link to you photo!</h1>
             <label for="name">Name:</label>
-            <input type="text" id="name" name="photoUrl">
+            <input type="text" id="name" name="name">
           </div>
           <div>
             <label for="photo">Photo URL:</label>
             <input type="text" id="photo" name="photoURL">
           </div>
     <div>
-        <p>Question One</p>
-        <p>How much do you like pizza?</p>
-        <select name="pizza" id = 'one'>
-            <option value="one">1</option>
-            <option value="two">2</option>
-            <option value="three">3</option>
-            <option value="four">4</option>
-            <option value="five">5</option>
+        <p class = 'question-title'>Question One</p>
+        <p>I have a vivid imagination</p>
+        <select name="imagine" id = 'one'>
+            <option value=1>1</option>
+            <option value=2>2</option>
+            <option value=3>3</option>
+            <option value=4>4</option>
+            <option value=5>5</option>
         </select>
     </div>
 
     <div>
-        <p>Question Two</p>
-        <p>How much do you like pizza?</p>
+        <p class = 'question-title'>Question Two</p>
+        <p>I take charge</p>
         <select name="pizza" id='two'>
-            <option value="one">1</option>
-            <option value="two">2</option>
-            <option value="three">3</option>
-            <option value="four">4</option>
-            <option value="five">5</option>
+            <option value=1>1</option>
+            <option value=2>2</option>
+            <option value=3>3</option>
+            <option value=4>4</option>
+            <option value=5>5</option>
         </select>
     </div>
 
     <div>
-        <p>Question Three</p>
-        <p>How much do you like pizza?</p>
+        <p class = 'question-title'>Question Three</p>
+        <p>I love large parties</p>
         <select name="pizza" id='three'>
-            <option value="one">1</option>
-            <option value="two">2</option>
-            <option value="three">3</option>
-            <option value="four">4</option>
-            <option value="five">5</option>
+            <option value=1>1</option>
+            <option value=2>2</option>
+            <option value=3>3</option>
+            <option value=4>4</option>
+            <option value=5>5</option>
         </select>
     </div>
 
     <div>
-        <p>Question Four</p>
-        <p>How much do you like pizza?</p>
+        <p class = 'question-title'>Question Four</p>
+        <p>I love excitement</p>
         <select name="pizza" id='four'>
-            <option value="one">1</option>
-            <option value="two">2</option>
-            <option value="three">3</option>
-            <option value="four">4</option>
-            <option value="five">5</option>
+            <option value=1>1</option>
+            <option value=2>2</option>
+            <option value=3>3</option>
+            <option value=4>4</option>
+            <option value=5>5</option>
         </select>
     </div>
     <div>
-        <p>Question Five</p>
-        <p>How much do you like pizza?</p>
+        <p class = 'question-title'>Question Five</p>
+        <p>I try to follow the rules</p>
         <select name="pizza" id='five'>
-            <option value="one">1</option>
-            <option value="two">2</option>
-            <option value="three">3</option>
-            <option value="four">4</option>
-            <option value="five">5</option>
+            <option value=1>1</option>
+            <option value=2>2</option>
+            <option value=3>3</option>
+            <option value=4>4</option>
+            <option value=5>5</option>
         </select>
     </div>
     <div>
-        <p>Question Six</p>
-        <p>How much do you like pizza?</p>
+        <p class = 'question-title'>Question Six</p>
+        <p>I panic easily</p>
         <select name="pizza" id='six'>
-            <option value="one">1</option>
-            <option value="two">2</option>
-            <option value="three">3</option>
-            <option value="four">4</option>
-            <option value="five">5</option>
+            <option value=1>1</option>
+            <option value=2>2</option>
+            <option value=3>3</option>
+            <option value=4>4</option>
+            <option value=5>5</option>
         </select>
     </div>
     <div>
-        <p>Question Seven</p>
-        <p>How much do you like pizza?</p>
+        <p class = 'question-title'>Question Seven</p>
+        <p>I trust others</p>
         <select name="pizza" id='seven'>
-            <option value="one">1</option>
-            <option value="two">2</option>
-            <option value="three">3</option>
-            <option value="four">4</option>
-            <option value="five">5</option>
+            <option value=1>1</option>
+            <option value=2>2</option>
+            <option value=3>3</option>
+            <option value=4>4</option>
+            <option value=5>5</option>
         </select>
     </div>
     <div>
-        <p>Question Eight</p>
-        <p>How much do you like pizza?</p>
+        <p class = 'question-title'>Question Eight</p>
+        <p>I often eat too much</p>
         <select name="pizza" id='eight'>
-            <option value="one">1</option>
-            <option value="two">2</option>
-            <option value="three">3</option>
-            <option value="four">4</option>
-            <option value="five">5</option>
+            <option value=1>1</option>
+            <option value=2>2</option>
+            <option value=3>3</option>
+            <option value=4>4</option>
+            <option value=5>5</option>
         </select>
     </div>
     <div>
-        <p>Question Nine</p>
-        <p>How much do you like pizza?</p>
+        <p class = 'question-title'>Question Nine</p>
+        <p>I prefer variety to routine</p>
         <select name="pizza" id='nine'>
-            <option value="one">1</option>
-            <option value="two">2</option>
-            <option value="three">3</option>
-            <option value="four">4</option>
-            <option value="five">5</option>
+            <option value=1>1</option>
+            <option value=2>2</option>
+            <option value=3>3</option>
+            <option value=4>4</option>
+            <option value=5>5</option>
         </select>
     </div>
     <div>
-        <p>Question Ten</p>
-        <p>How much do you like pizza?</p>
+        <p class = 'question-title'>Question Ten</p>
+        <p>I can't make up my mind</p>
         <select name="pizza" id='ten'>
-            <option value="one">1</option>
-            <option value="two">2</option>
-            <option value="three">3</option>
-            <option value="four">4</option>
-            <option value="five">5</option>
+            <option value= 1>1</option>
+            <option value= 2>2</option>
+            <option value= 3>3</option>
+            <option value= 4>4</option>
+            <option value= 5>5</option>
         </select>
     </div>
-    <div class="button">
-    <button type="submit" class = 'submit'>Submit</button>
-    </div>
+</div>
+        <button type= 'button' id = 'submit'>submit</button>
     </form>
-    <script src="https://code.jquery.com/jquery.js"></script>
-    <script src="app.js"></script>
+    <script  src="https://code.jquery.com/jquery.js"></script>
+    <script type='text/javascript'>
+
+$('#submit').on('click', function(event) {
+    event.preventDefault();
+    let score = [            
+            parseInt($('#one').val().trim()),
+            parseInt($('#two').val().trim()),
+            parseInt($('#three').val().trim()),
+            parseInt($('#four').val().trim()),
+            parseInt($('#five').val().trim()),
+            parseInt($('#six').val().trim()),
+            parseInt($('#seven').val().trim()),
+            parseInt($('#eight').val().trim()),
+            parseInt($('#nine').val().trim()),
+            parseInt($('#ten').val().trim())]
+    let newFriend = {
+        name: $('#name').val().trim(),
+        photo: $('#photo').val().trim(),
+        scores: score
+    };
+    $.post("/api/friends", newFriend, function(data){
+        updateModal(data);
+    })
+});
+
+
+function updateModal(friend) {
+
+const modal = $('#survey_modal');
+const img = $('#modal-img');
+const title = $('#modal-title');
+
+title.html(`Meet your new friend! ${friend.name}`);
+img.src = friend.photo;
+
+modal.removeClass('hide');
+
+}
+
+function closeModal() {
+const modal = $('#survey_modal');
+
+modal.addClass('hide');
+}
+    
+$('#survey_modal').on('click', closeModal)
+    
+    
+    </script>
 </body>
 </html>
